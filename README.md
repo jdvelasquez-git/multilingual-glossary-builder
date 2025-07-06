@@ -9,7 +9,7 @@ If you work in Localization or Globalization your in organization, you likely re
 
 ## 💾 Libraries Used
 1. OpenAI
-2. Pandas
+2. Pandas; openpyxl; requests
 
 ## 📄 General Instructions
 1. Edit the script and add your API key (line 40).
