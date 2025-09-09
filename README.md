@@ -14,7 +14,7 @@ If you work in Localization or Globalization your in organization, you likely re
 ## 📄 General Instructions
 1. Edit the script and add your API key (line 40).
 2. Run the script.
-3. Drag and drop your Excel files (minus quotation marks) following the interactive wizard.
+3. Drag and drop your Excel files.
 4. Specify the column header names for each Excel file.
 5. Enjoy your new glossary.
 
