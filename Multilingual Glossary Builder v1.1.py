@@ -36,7 +36,7 @@ Translations = pd.read_excel(translationsPath)
 allTerms = set(TermsList[termListColumn].dropna().astype(str).unique())
 memory = [(str(getattr(row, sourceColumn)), str(getattr(row, targetColumn))) for row in Translations.itertuples(index=False)]
 # Load Perplexity
-client = OpenAI(api_key="YOUR API KEY HERE", base_url="https://api.perplexity.ai")
+client = OpenAI(api_key="your-api-key", base_url="https://api.perplexity.ai")
 
 
 # In[ ]:
@@ -61,11 +61,11 @@ for term in tqdm(allTerms,desc='Processing English terms'):
             seen_matches.add(term)
             matchList.append({'term':term})
             prompt = (
-                "Given this English term and its context, extract its translation from the provided translations:\n"
+                "Given this English term and its context, extract the equivalent translation in the specified language from the provided translations:\n"
                 f"Term: {term}\n"
                 f"Context: {source}\n"
                 f"Translations: {target}\n"
-                f"Language (ISO):{targetColumn}\n"
+                f"Language of Translations (ISO):{targetColumn}\n"
                 "Output: Translated term in the specified language.\n"
                 "Rules: No punctuation; no formatting; no notes; no intros; no explanations; no descriptions."
             )
@@ -78,7 +78,7 @@ for term in tqdm(allTerms,desc='Processing English terms'):
             time.sleep(1.3)
             break
 df = pd.DataFrame(newGlossary)
-excel_filename = "glossary_LOTS.xlsx"
+excel_filename = "yourGlossary.xlsx"
 df.to_excel(excel_filename, index=False)
 print(f"\n✅ Excel file created: {excel_filename}")
 print("🌐 www.localizationtimes.com")
